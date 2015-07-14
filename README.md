@@ -41,4 +41,4 @@ I don't assume any legal liability.
 [![CC BY-NC 4.0](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 CC Attribution-NonCommercial 4.0 International
 
-Your Fork or Pull Request are welcomed!
+Your Fork and Pull Request are welcomed!
