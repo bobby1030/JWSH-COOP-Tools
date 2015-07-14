@@ -21,27 +21,31 @@ def generateUserIDList():
 def get():
 	# Send Request
 	for x in useridList:
-		rawRequest = [
-		        'userid='+str(x),
-				'password='+str(x)
-					]
+		try:
+			rawRequest = [
+			        'userid='+str(x),
+					'password='+str(x)
+						]
+			
+			req = Request('http://coop.jwsh.tp.edu.tw/',data='&'.join(rawRequest).encode())
+			x = urlopen(req)
+			req = x.read()
+			reqBS = BS(req,"html.parser")
 		
-		req = Request('http://coop.jwsh.tp.edu.tw/',data='&'.join(rawRequest).encode())
-		x = urlopen(req)
-		req = x.read()
-		reqBS = BS(req,"html.parser")
-	
-		#Data of Request
-		results = reqBS.find('font', {'color':'#bb0000'}).string
-		resultsList.append(results)
+			#Data of Request
+			results = reqBS.find('font', {'color':'#bb0000'}).string
+			resultsList.append(results)
+		except:
+			pass
 
 def printResult():
 	print ('')
-
-	for z in range(crawlerNum):
-		print (str(useridList[z])+'：',end='')
-		print (resultsList[z])
-
+	try:
+		for z in range(crawlerNum):
+			print (str(useridList[z])+'：',end='')
+			print (resultsList[z])
+	except:
+		pass
 	print ('')
 
 def main():
@@ -51,5 +55,4 @@ def main():
 	printResult()
 	main()
 
-if __name__ == "__main__":
-	main()
+main()
