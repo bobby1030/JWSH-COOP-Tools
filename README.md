@@ -18,10 +18,11 @@ This is a database crawler,but the performance is limited by school rubbish netw
 2.  提供迴圈功能，可爬出指定數量的資料
 3.  此程式會「忽略所有查詢錯誤」，也就是說，如果輸入錯誤的學號，程式不會主動報錯
 
-4.  Input Student ID, output Students' real name.
+# 
 
-5.  Has loop function, so you can set an amount of results you want.
-6.  Will ignore every search error (such as Wrong ID...).
+1.  Input Student ID, output Students' real name.
+2.  Has loop function, so you can set an amount of results you want.
+3.  Will ignore every search error (such as Wrong ID...).
 
 ## 需求 Requirement
 
@@ -33,8 +34,7 @@ This is a database crawler,but the performance is limited by school rubbish netw
 
 此程式僅供研究之用，禁止從事任何不法行為，本人不負任何法律責任
 
-This program "is only for study".
-I don't assume any legal liability.
+This program "is only for study".  I don't assume any legal liability.
 
 ## 授權 Licence
 
