@@ -23,6 +23,12 @@ This is a database crawler,but the performance is limited by school rubbish netw
 5.  Has loop function, so you can set an amount of results you want.
 6.  Will ignore every search error (such as Wrong ID...).
 
+## 需求 Requirement
+
+*   Python 3
+*   Beautiful Soup 4
+*   Internet Connection (lol)
+
 ## 聲明 Announcement
 
 此程式僅供研究之用，禁止從事任何不法行為，本人不負任何法律責任
