@@ -8,6 +8,14 @@ from bs4 import BeautifulSoup as BS
 resultsList = []
 useridList = []
 
+def header(url):
+	url.add_header('Host','coop.jwsh.tp.edu.tw')
+	url.add_header('User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:40.0) Gecko/20100101 Firefox/40.0')
+	url.add_header('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8')
+	url.add_header('Accept-Language','zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3')
+	url.add_header('Accept-Encoding','gzip, deflate')
+	url.add_header('Connection','keep-alive')
+
 def setuserid():
 	global startuserid
 	global crawlerNum
@@ -29,6 +37,7 @@ def get():
 						]
 
 			req = Request('http://coop.jwsh.tp.edu.tw/',data='&'.join(rawRequest).encode())
+			header(req)
 			x = urlopen(req)
 			req = x.read()
 			reqBS = BS(req,"html.parser")
@@ -38,7 +47,7 @@ def get():
 			resultsList.append(results)
 			
 		except:
-			print ('查詢失敗：'+str())
+			print ('查詢失敗：'+str(x))
 
 def printResult():
 	print ('=========最終結果=========')
@@ -47,7 +56,7 @@ def printResult():
 			print (str(useridList[z])+'：',end='')
 			print (resultsList[z])
 	except:
-		pass
+		print()
 	print ('==========================')
 
 def main():
