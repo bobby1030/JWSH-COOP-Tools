@@ -21,12 +21,13 @@ def generateUserIDList():
 def get():
 	# Send Request
 	for x in useridList:
+		print ('正在查詢：'+str(x))
 		try:
 			rawRequest = [
 			        'userid='+str(x),
 					'password='+str(x)
 						]
-			
+
 			req = Request('http://coop.jwsh.tp.edu.tw/',data='&'.join(rawRequest).encode())
 			x = urlopen(req)
 			req = x.read()
@@ -35,18 +36,19 @@ def get():
 			#Data of Request
 			results = reqBS.find('font', {'color':'#bb0000'}).string
 			resultsList.append(results)
+			
 		except:
-			pass
+			print ('查詢失敗：'+str())
 
 def printResult():
-	print ('')
+	print ('=========最終結果=========')
 	try:
 		for z in range(crawlerNum):
 			print (str(useridList[z])+'：',end='')
 			print (resultsList[z])
 	except:
 		pass
-	print ('')
+	print ('==========================')
 
 def main():
 	setuserid()
