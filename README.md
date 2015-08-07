@@ -4,15 +4,15 @@
 
 ### coop_search.py
 
-1.  姓名查詢 Real Name Search
-2.  儲值餘額查詢 Credit Search
-3.  累積消費額查詢 Total Spending Search
+1.  姓名查詢 Real Name Lookup
+2.  儲值餘額查詢 Credit Lookup
+3.  累積消費額查詢 Total Spending Lookup
 
 ### coop_crawler.py
 
 此為資料庫爬蟲，但受限於學校伺服器速度，效能極低
 
-This is a database crawler,but the performance is limited by school rubbish network.
+This is a database crawler,but the performance is limited due to school rubbish internet connection.
 
 1.  輸入學號，爬出姓名
 2.  提供迴圈功能，可爬出指定數量的資料
@@ -20,8 +20,8 @@ This is a database crawler,but the performance is limited by school rubbish netw
 
 # 
 
-1.  Input Student ID, output Students' real name.
-2.  Has loop function, so you can set an amount of results you want.
+1.  Submit Student ID, show students' real name.
+2.  Loop function that you can set an amount of results you want.
 3.  Will ignore every search error (such as Wrong ID...).
 
 ## 需求 Requirement
