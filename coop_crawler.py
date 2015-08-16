@@ -5,8 +5,7 @@ from urllib.request import urlopen
 from urllib.request import Request
 from bs4 import BeautifulSoup as BS
 
-resultsList = []
-useridList = []
+
 
 def header(url):
 	url.add_header('Host','coop.jwsh.tp.edu.tw')
@@ -19,6 +18,10 @@ def header(url):
 def setuserid():
 	global startuserid
 	global crawlerNum
+	global resultsList
+	global useridList
+	resultsList = []
+	useridList = []
 	startuserid = int(input('請輸入爬蟲起始學號：'))
 	crawlerNum = int(input('請輸入欲爬出的結果數量：'))
 
@@ -52,7 +55,7 @@ def get():
 def printResult():
 	print ('=========最終結果=========')
 	try:
-		for z in range(crawlerNum):
+		for z in range(len(resultsList)):
 			print (str(useridList[z])+'：',end='')
 			print (resultsList[z])
 	except:
