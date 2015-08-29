@@ -51,18 +51,20 @@ def get():
 			
 		except:
 			print ('查詢失敗：'+str(x))
+			resultsList.append('')
 
 def printResult():
 	resultsFile = open('CrawlerResults.txt','w')
 	print ('=========最終結果=========')
-	try:
-		for z in range(len(resultsList)):
-			print (str(useridList[z])+'：',end='')
+	for z in range(len(resultsList)):
+		print (str(useridList[z])+'：',end='')
+		print (str(useridList[z])+'：',end='',file=resultsFile)
+		if len(resultsList[z]) <= 3:	
 			print (resultsList[z])
-			print (str(useridList[z])+'：',end='',file=resultsFile)
 			print (resultsList[z],file=resultsFile)
-	except:
-		print()
+		else:
+			print ('')
+			print ('',file=resultsFile)
 	print ('==========================')
 
 def main():
